@@ -1,6 +1,10 @@
--- Migration number: 0001 	 2024-08-11T12:29:45.715Z
-model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
-}
+-- CreateTable
+CREATE TABLE "User" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "email" TEXT NOT NULL,
+    "name" TEXT
+);
+
+-- CreateIndex
+CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
+
